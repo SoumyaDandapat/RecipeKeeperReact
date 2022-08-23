@@ -1,11 +1,4 @@
 {
-  "expo": {
-    "name": "RecipeKeeperReact",
-    "slug": "RecipeKeeperReact",
-    "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
-  },
-  "name": "RecipeKeeperReact"
+  "name": "RecipeKeeperReact",
+  "displayName": "RecipeKeeperReact"
 }
