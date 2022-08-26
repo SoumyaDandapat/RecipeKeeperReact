@@ -1,42 +1,32 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RecipeListScreen from './assets/screens/RecipeListScreen';
 import RecipeDetailScreen from './assets/screens/RecipeDetailScreen';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <>
       <NavigationContainer>
-        <Stack.Navigator
+        <Drawer.Navigator
           screenOptions={{
             headerStyle: {backgroundColor: '#6200EE'},
             headerTintColor: 'white'
           }}
         >
-          <Stack.Screen 
+          <Drawer.Screen 
             name="Recipe List" 
             component={RecipeListScreen} 
             options={{
               title:  'Recipe List',
             }}/> 
-            <Stack.Screen 
+            <Drawer.Screen 
             name="RecipeDetailScreen" 
             component={RecipeDetailScreen} 
-            options={{
-              title:  'Recipe Details',
-            }}/>
-         </Stack.Navigator>
+            />
+         </Drawer.Navigator>
       </NavigationContainer>
     </>
   );

@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     },
     recipeImage: {
         height: 250,
-        width: 250,
+        width: '100%',
         padding: 5,
         borderRadius: 6
     },

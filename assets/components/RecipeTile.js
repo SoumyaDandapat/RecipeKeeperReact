@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         shadowColor: 'black',
         shadowOpacity: 0.25,
         shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 8
+        shadowRadius: 8,
+        overflow:'hidden'
     },
     recipeArt: {
         height: 170,
