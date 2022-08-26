@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AboutScreen from './assets/screens/AboutScreen';
 import ProfileScreen from './assets/screens/ProfileScreen';
 import FavouriteScreen from './assets/screens/FavouriteScreen';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -28,13 +29,28 @@ function DrawerNavigator() {
       }} />
       <Drawer.Screen
       name="About"
-      component={AboutScreen}/>
+      component={AboutScreen}
+      options={{
+        drawerIcon:({color, size}) => (
+          <Ionicons name="information-circle" color={color} size={size} />
+        )
+      }}/>
       <Drawer.Screen
       name="Profile"
-      component={ProfileScreen} />
+      component={ProfileScreen} 
+      options={{
+        drawerIcon:({color, size}) => (
+          <Ionicons name="person" color={color} size={size} />
+        )
+      }}/>
       <Drawer.Screen
       name="Favourite"
-      component={FavouriteScreen}/>
+      component={FavouriteScreen}
+      options={{
+        drawerIcon:({color, size}) => (
+          <Ionicons name="heart" color={color} size={size} />
+        )
+      }}/>
   </Drawer.Navigator>
 }
 
