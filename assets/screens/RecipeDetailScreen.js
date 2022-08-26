@@ -11,6 +11,14 @@ function RecipeDetailScreen({ route, navigation }) {
         })
     }, [recipe, navigation])
 
+    function Section({ title, data }) {
+        return (<>
+            <Text style={styles.titleText}>{title}</Text>
+            <Text style={styles.dataText}>{data}</Text>
+        </>
+        );
+    }
+
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -18,12 +26,13 @@ function RecipeDetailScreen({ route, navigation }) {
                     <Image style={styles.recipeImage}
                         source={{ uri: recipe.imageUrl }} />
                 </View>
-            </View>
-            <View style = {styles.recipeDataView}>
-                <Text>{recipe.name}</Text>
-                <Text>{recipe.description}</Text>
-                <Text>{recipe.ingredients}</Text>
-                <Text>{recipe.steps}</Text>
+
+                <View style={styles.recipeDataView}>
+                    <Text style={styles.recipeName}>{recipe.name}</Text>
+                    <Section title='Description' data={recipe.description} />
+                    <Section title='Ingredients' data={recipe.ingredients} />
+                    <Section title='Steps' data={recipe.steps} />
+                </View>
             </View>
         </ScrollView>
 
@@ -34,8 +43,9 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         flex: 1,
-        margin: 8,
-        padding: 8
+        margin: 2,
+        padding: 8,
+        backgroundColor: "#FFE5B4"
     },
     recipeImage: {
         height: 250,
@@ -50,9 +60,24 @@ const styles = StyleSheet.create({
         borderBottomColor: 'grey',
         borderBottomWidth: 1
     },
-    recipeDataView:{
-
+    recipeDataView: {
+        marginVertical:4,
+    },
+    recipeName: {
+        textAlign:'center',
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginBottom: 10    
+    },
+    titleText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 5
+        },
+    dataText: {
+        fontSize: 15
     }
+
 
 })
 
