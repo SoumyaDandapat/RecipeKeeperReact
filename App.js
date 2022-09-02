@@ -8,6 +8,8 @@ import AboutScreen from './assets/screens/AboutScreen';
 import ProfileScreen from './assets/screens/ProfileScreen';
 import FavouriteScreen from './assets/screens/FavouriteScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Provider } from 'react-redux';
+import store from './assets/redux/store';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -57,7 +59,7 @@ function DrawerNavigator() {
 
 export default function App() {
   return (
-    <>
+    <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -77,6 +79,6 @@ export default function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
-    </>
+    </Provider>
   );
 }
