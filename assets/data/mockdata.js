@@ -67,3 +67,70 @@ export const RECIPES = [
         "flour\n,chicken\nsoy sauce\nonion\nchilly"
     )
 ]
+
+export const RECIPES_JSON = [
+    {
+        "id": 1,
+        "name": "Pizza",
+        "description": "Pizza is one of the trending fast food. It contains bread, cheese and sauce as a base, and can contain any amount of toppings required.",
+        "imageUrl": "https://pngimg.com/uploads/pizza/pizza_PNG43991.png",
+        "steps": "Make the dough\nMake the sauce\nMake a flat dough\nPut sauce on the base\nPut cheese on the top\nSpread toppings and put it in oven for 15 minutes",
+        "ingredients": "cheese\nonion\nflour\nsalt\ncorn\ntomato\nchicken\nolives"
+    },
+    {
+        "id": 2,
+        "name": "Burger",
+        "description": "description",
+        "imageUrl": "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+        "steps": "steps..",
+        "ingredients": "ingredients.."
+    },
+    {
+        "id": 3,
+        "name": "Sandwich",
+        "description": "description",
+        "imageUrl": "https://pngimg.com/uploads/sandwich/sandwich_PNG64.png",
+        "steps": "step 1\n step 2\nstep 3\nstep 4",
+        "ingredients": "cheese,tomato,bread,butter"
+    },
+    {
+        "id": 4,
+        "name": "Biriyani",
+        "description": "Dum Biryani is one of the favourite dish eaten near the eastern part of India. Its trademark is DUM, which is basically flour dough used to seal the Container. In West bengal, People also like Potatoes in them. ",
+        "imageUrl": "https://www.nicepng.com/png/full/914-9141005_about-chicken-biryani-ad.png",
+        "steps": "step 1\nstep 2\nstep 3\nstep 4\nstep 5\n step 6\nstep 7\nstep 8\nstep 9\nstep 10",
+        "ingredients": "Rice\nChicken\nMasala\nOnion\nGinger\nGarlic\nPotato\nFlour\nSalt"
+    },
+    {
+        "id": 5,
+        "name": "Chicken Roll",
+        "description": "description",
+        "imageUrl": "https://www.pngarts.com/files/8/Chicken-Egg-Roll-PNG-Background-Image.png",
+        "steps": "step 1, step 2,step 3",
+        "ingredients": "cheese,tomato,bread,chicken,onion"
+    },
+    {
+        "id": 6,
+        "name": "Noodles",
+        "description": "description",
+        "imageUrl": "https://purepng.com/public/uploads/large/purepng.com-noodlenoodlechinesestaple-foodwheat-doughnudel-1411527967299jqwgx.png",
+        "steps": "steps..",
+        "ingredients": "ingredients.."
+    },
+    {
+        "id": 7,
+        "name": "Fish Curry",
+        "description": "description",
+        "imageUrl": "https://1.bp.blogspot.com/-w-Uo_6l0fqU/T1iSlPxar6I/AAAAAAAABDw/W5AXYAd1Ylg/s1600/KERALA+FISH+CURRY.png",
+        "steps": "step 1, step 2,step 3",
+        "ingredients": "fish,tomato,onion,masala"
+    },
+    {
+        "id": 8,
+        "name": "Momos",
+        "description": "description",
+        "imageUrl": "https://www.pikpng.com/pngl/b/465-4656115_sunil-momos-png-download-momo-non-veg-clipart.png",
+        "steps": "steps..",
+        "ingredients": "ingredients.."
+    }
+]

@@ -3,22 +3,43 @@ import { RECIPES } from "../data/mockdata";
 import { View, FlatList, StyleSheet, TextInput } from "react-native";
 import RecipeTile from '../components/RecipeTile';
 import { useSelector, useDispatch } from 'react-redux'
-import { getData } from '../redux/actions';
+import { getData, addFavourite, removeFavourite } from '../redux/actions';
 
 
 function RecipeListScreen({ navigation }) {
 
     // const [filteredData, setFilteredData] = useState([]);
     // const [masterData, setMasterData] = useState([]);
-    const [search, setSearch] = useState('');   
+    const [search, setSearch] = useState('');
 
     const dispatch = useDispatch();
-    const recipes = useSelector(state =>state.recipes)
+    const recipes = useSelector(state => state.recipes)
+    const favourites = useSelector(state =>state.favourites)
 
-    useEffect(() =>{
+    const addToFavouritesList = recipe => dispatch(addFavourite(recipe));
+    const removeFromFavouritesList = recipe => dispatch(removeFavourite(recipe));
+
+    const handleAddFavourites = recipe => {
+        addToFavouritesList(recipe);
+        console.log("Added to favourites :"+ recipe.name)
+    };
+
+    const handleRemoveFavourites = recipe => {
+        removeFromFavouritesList(recipe);
+        console.log("Removed from favourites :"+ recipe.name)
+    };
+
+    const ifExists = recipe => {
+        if (favourites.filter(item => item.id === recipe.id).length > 0) {
+          return true;
+        }
+        return false;
+      };
+
+    useEffect(() => {
         dispatch(getData());
         // fetchData();
-    },[])
+    }, [])
 
     // const fetchData = () =>{
     //     setFilteredData(RECIPES)
@@ -49,7 +70,7 @@ function RecipeListScreen({ navigation }) {
         }
         return (
             <RecipeTile
-                recipe={itemData.item} onPress={onPress} />
+                recipe={itemData.item} onPress={onPress} isFavorite={ifExists(itemData.item)} onFavouriteClick={()=>ifExists(itemData.item)?handleRemoveFavourites(itemData.item):handleAddFavourites(itemData.item)}/>
         );
     }
 
@@ -63,7 +84,7 @@ function RecipeListScreen({ navigation }) {
                 onChangeText = {(text)=>searchFilter(text)}
             /> */}
             <FlatList
-                style = {styles.flatListStyle}
+                style={styles.flatListStyle}
                 data={recipes}
                 keyExtractor={(item) => item.id}
                 renderItem={returnRecipe}
@@ -74,7 +95,7 @@ function RecipeListScreen({ navigation }) {
 
 }
 
-const styles = StyleSheet.create({ 
+const styles = StyleSheet.create({
     viewContainer: {
         marginTop: 16,
         width: '100%'
@@ -86,7 +107,7 @@ const styles = StyleSheet.create({
     //     borderColor: '#009688',
     //     backgroundColor: 'white'
     // },
-    flatListStyle:{
+    flatListStyle: {
         // marginBottom: 60
     }
 })
