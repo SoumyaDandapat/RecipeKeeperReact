@@ -10,7 +10,7 @@ function RecipeListScreen({ navigation }) {
 
     // const [filteredData, setFilteredData] = useState([]);
     // const [masterData, setMasterData] = useState([]);
-    const [search, setSearch] = useState('');
+    // const [search, setSearch] = useState('');
 
     const dispatch = useDispatch();
     const recipes = useSelector(state => state.recipes)
